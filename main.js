@@ -5,21 +5,29 @@ var ele="";
 for(let i=0;i<bostondata.length;i++){
     for(let j=i+1;j<bostondata.length;j++){
         if(bostondata[i][11]<bostondata[j][11]){
-            let temp=bostondata[i];
-            bostondata[i]=bostondata[j];
-            bostondata[j]=temp;
+            let temp=bostondata[i][11];
+            bostondata[i][11]=bostondata[j][11];
+            bostondata[j][11]=temp;
         }
         
     }
    
 
 }
-let output=bostondata.slice(0,5);
-for(let i=0;i<output.length;i++){
-ele=ele+"<h1>"+output[i][8]+"</h1>"+"<h1>"+output[i][11]+"</h1>"
-console.log(output[i][8],output[i][11])
+ var i=0;
+while(i<5)
+{
+    ele+="<h2>" +
+bostondata[i][8] +
+"</h2>" +
+"<h3>" +
+bostondata[i][11] +
+"</h3>";
+i++;
+
 }
-document.getElementById("app").innerHTML=ele
+
+document.getElementById("app").innerHTML="<ul>"+ele+"</ul>";
 
 
 
